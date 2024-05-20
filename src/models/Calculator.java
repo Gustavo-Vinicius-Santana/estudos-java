@@ -1,7 +1,20 @@
 package models;
 
 public class Calculator {
-    public static void Calc(String[] args){
-        System.out.print("metodos de calculos");
+
+    public double add(double num1, double num2){
+        return num1 + num2;
+    }
+
+    public double subtract(double num1, double num2){
+        return num1 - num2;
+    }
+
+    public double multiply(double num1, double num2){
+        return num1 * num2;
+    }
+
+    public double division(double num1, double num2){
+        return  num1 / num2;
     }
 }
