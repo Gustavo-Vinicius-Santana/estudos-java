@@ -2,15 +2,9 @@ import apps.CalculatorApp;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-        // DEFINIÇÃO DE APPS
-        CalculatorApp calc = new CalculatorApp();
         // DEFINIÇÃO DE ENTRADA
         Scanner scanner = new Scanner(System.in);
-
-        // DEFINIÇÃO DE VARIAVEIS
-        int choice = 0;
 
         // INTERAÇÃO COM O USUARIO
         System.out.println("\n-------------------------------------------------");
@@ -20,21 +14,39 @@ public class Main {
         System.out.println("\n1-CALCULADORA");
 
         System.out.print("\nDigite o numero da sua escolha: ");
-        choice = scanner.nextInt();
+        int choiceAplication = scanner.nextInt();
 
         System.out.println("\n-------------------------------------------------");
-        switch(choice){
+
+        ChoiceApp(choiceAplication);
+
+        System.out.println("\n-------------------------------------------------");
+        System.out.print("\nDeseja escolher outro App?\n1-Sim\n2-Não\nDigite a opção:");
+        int choiceRestart = scanner.nextInt();
+        switch (choiceRestart){
+            case 1:
+                main(new String[0]);
+                break;
+            case 2:
+                break;
+        }
+    }
+    public static void ChoiceApp(int choiceParam){
+        // DEFINIÇÃO DE APPS
+        CalculatorApp calc = new CalculatorApp();
+        // DEFINIÇÃO DE ENTRADA
+        Scanner scanner = new Scanner(System.in);
+
+        switch(choiceParam){
             case 1:
                 calc.Start();
-
+                break;
+            default:
+                System.out.print("Numero invalido. Digite novamente: ");
+                int choice = scanner.nextInt();
+                ChoiceApp(choice);
+                break;
         }
 
-        // CHECAGEM DE ESCOLHA
-        while(choice != 1){
-            System.out.print("\nNumero invalido. Digite novamente: ");
-            choice = scanner.nextInt();
-        }
-
-        System.out.println("\n-------------------------------------------------");
     }
 }

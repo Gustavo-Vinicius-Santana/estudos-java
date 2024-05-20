@@ -64,13 +64,14 @@ public class CalculatorApp {
         System.out.print("\n1-SOMA\n2-SUBTRAÇÃO\n3-MULTIPLICAÇÃO\n4-DIVISÃO");
         ChoiceOperation(n1, n2);
 
-        System.out.print("\nEscolah de continuação:\n1-CONTINUAR\n2-PARAR\nDigite a opção:");
+        System.out.print("\nDeseja realizar outro calculo?\n1-SIM\n2-NÃO\nDigite a opção:");
         int choice = scanner.nextInt();
         switch (choice){
             case 1:
                 Start();
                 break;
             case 2:
+                System.out.print("Calculadora encerrada!");
                 break;
         }
     }
