@@ -1,4 +1,6 @@
 import apps.CalculatorApp;
+import apps.PessoasApp;
+
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +14,7 @@ public class Main {
         System.out.println("\nESCOLHA UM DOS SISTEMAS ABAIXO");
 
         System.out.println("\n1-CALCULADORA");
+        System.out.println("\n2-LISTA PESSOAS");
 
         System.out.print("\nDigite o numero da sua escolha: ");
         int choiceAplication = scanner.nextInt();
@@ -34,12 +37,16 @@ public class Main {
     public static void ChoiceApp(int choiceParam){
         // DEFINIÇÃO DE APPS
         CalculatorApp calc = new CalculatorApp();
+        PessoasApp pessoas = new PessoasApp();
         // DEFINIÇÃO DE ENTRADA
         Scanner scanner = new Scanner(System.in);
 
         switch(choiceParam){
             case 1:
                 calc.Start();
+                break;
+            case 2:
+                pessoas.Start();
                 break;
             default:
                 System.out.print("Numero invalido. Digite novamente: ");
